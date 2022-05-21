@@ -125,15 +125,13 @@ function updateLocalStorage(){
 	let savedTasks = localStorage.getItem("tasks")?
 	JSON.parse(localStorage.getItem("tasks"))
 	:[];
-	let i = 0;
-	let Tasks1 = [];
+	let tasksList = [];
 	savedTasks.forEach((item)=>{
 		if(item === beforeEdit){
-			Tasks1.push(afterEdit);
+			tasksList.push(afterEdit);
 		}else{
-			Tasks1.push(item);
+			tasksList.push(item);
 		}
-		i = i + 1;
 	});
-	localStorage.setItem("tasks", JSON.stringify(Tasks1));
+	localStorage.setItem("tasks", JSON.stringify(tasksList));
 }
